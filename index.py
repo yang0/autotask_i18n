@@ -53,10 +53,6 @@ class GenerateTypesTS(Node):
             # 生成完整的types.ts内容
             types_content = f"""export interface I18nMessages {interface_content}
 
-// 用于类型检查的辅助函数
-export function checkI18nMessages(messages: I18nMessages): void {{
-  // 仅用于类型检查,运行时不做任何事情
-}}
 """
             # 确保输出目录存在
             os.makedirs(output_dir, exist_ok=True)
