@@ -37,7 +37,7 @@ class GenerateTypesTS(Node):
         }
     }
 
-    def execute(self, node_inputs: Dict[str, Any], workflow_logger) -> Dict[str, Any]:
+    async def execute(self, node_inputs: Dict[str, Any], workflow_logger) -> Dict[str, Any]:
         try:
             zh_ts_file = node_inputs["zh_ts_file"]
             output_dir = node_inputs["output_dir"]
@@ -198,7 +198,7 @@ class CompareI18nKeys(Node):
             workflow_logger.error(f"Error extracting keys: {str(e)}")
             raise ValueError(f"Failed to process i18n file: {str(e)}")
 
-    def execute(self, node_inputs: Dict[str, Any], workflow_logger) -> Dict[str, Any]:
+    async def execute(self, node_inputs: Dict[str, Any], workflow_logger) -> Dict[str, Any]:
         try:
             file1 = node_inputs["first_file"]
             file2 = node_inputs["second_file"]
